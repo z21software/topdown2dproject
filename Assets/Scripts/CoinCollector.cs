@@ -14,11 +14,11 @@ public class CoinCollector : MonoBehaviour
     {
         if (collision.CompareTag("Coin"))
         {
-            Destroy(collision.gameObject);
             GameObject popup = Instantiate(_scorePopupPrefab, collision.transform.position, Quaternion.identity);
             popup.GetComponent<ScorePopup>().Initialize();
             _score++;
             UpdateUI();
+            Destroy(collision.gameObject);
         }
             
     }
@@ -26,6 +26,16 @@ public class CoinCollector : MonoBehaviour
     private void UpdateUI()
     {
         _coinsCount.text = $"Очки: {_score}";
+    }
+
+    public void DecreaseScore(int damage)
+    {
+        if(_score == 0)
+        {
+            Destroy(gameObject);
+        }
+        _score = Mathf.Max(_score-damage, 0);
+        UpdateUI();
     }
 }
 

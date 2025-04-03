@@ -913,7 +913,7 @@ GameObject:
   - component: {fileID: 1635485759}
   m_Layer: 0
   m_Name: Player
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1215,8 +1215,9 @@ MonoBehaviour:
   - {fileID: 1362045695893385511, guid: eee366c311f6cb4449f2dc427dc5e4b4, type: 3}
   - {fileID: 7077966072869558470, guid: 66c569eeda8692347b69a86ec68faa55, type: 3}
   - {fileID: 3551674125455731038, guid: 4b198511b066d4f4681c83dea022f3f2, type: 3}
+  _enemyPrefab: {fileID: 4492955458525808732, guid: 0f94600b04721e94d9abcae081f2d744, type: 3}
   _spawnInterwal: 2
-  _toSpawnLeft: 3
+  _toSpawnLeft: 5
   _globalTimer: 30
   _timerText: {fileID: 2093552912}
 --- !u!4 &1732004843
