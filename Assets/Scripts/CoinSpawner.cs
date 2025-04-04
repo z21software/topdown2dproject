@@ -19,61 +19,53 @@ public class CoinSpawner : MonoBehaviour
     private void Start()
     {
         _spawnRemaining = _maxSpawns;
-        UpdateTimerUI();
     }
 
     private void Update()
     {
-        UpdateTimerUI();
+        if (_gameDuration <= 0) return;
+        HandleSpawn();
+        UpdateGameTimer();
+    }
+
+    private void HandleSpawn()
+    {
         _timer += Time.deltaTime;
-        if (_timer >= _spawnInterwal && _maxSpawns != 0)
+        if(_timer >= _spawnInterwal && _spawnRemaining > 0)
         {
-            SpawnPrefabs();
+            SpawnRandomObject();
+            _timer = 0;
+            _spawnRemaining--;
         }
     }
 
-    private void SpawnPrefabs()
+    private void SpawnRandomObject()
     {
-        float num = Random.value;
-        if (num < .7f)
-        {
-            SpawnCoin();
-        }
-        else
-        {
-            SpawnEnemy();
-        }
-        _timer = 0;
-        _maxSpawns--;
-        Debug.Log($"Coins left to spawn: {_maxSpawns}");
+        bool shouldSpawnCoin = Random.value < .7f;
+        bool enemySpawn = false;
+        Vector3 position = shouldSpawnCoin ? GetRandomCoinPosition() : GetRandomEnemyPosition();
+
+        Instantiate(
+            shouldSpawnCoin ? GetRandomCoin() : _enemyPrefab,
+            position,
+            Quaternion.identity
+        );
     }
 
-    private void SpawnEnemy()
+    private GameObject GetRandomCoin()
     {
-        Instantiate(_enemyPrefab, GetEnemyRandomPosition(), Quaternion.identity);
+        return _coinsPrefab[Random.Range(0, _coinsPrefab.Length)];
     }
 
-    private void UpdateTimerUI()
+    private void UpdateGameTimer()
     {
         _gameDuration -= Time.deltaTime;
-        int timeConvertToInt = Mathf.FloorToInt(_gameDuration);
-        _timerText.text = $"Осталось {timeConvertToInt} сек";
-        if(_gameDuration <= 0)
-        {
-            _timerText.text = $"Время вышло =(";
-        }
+        _timerText.text = _gameDuration > 0
+            ? $"Осталось {Mathf.FloorToInt(_gameDuration)} сек"
+            : "Время вышло =(";
     }
 
-    private void SpawnCoin()
-    {
-        Vector3 randomPosition = GetCoinRandomPosition();
-        int coinIndex = Random.Range(0, _coinsPrefab.Length);
-        GameObject coin = Instantiate(_coinsPrefab[coinIndex], randomPosition, Quaternion.identity);
-        coin.transform.localScale = Vector3.zero;
-        coin.AddComponent<CoinAnimation>();
-    }
-
-    private static Vector3 GetCoinRandomPosition()
+    private static Vector3 GetRandomCoinPosition()
     {
         return new Vector3(
                     Random.Range(-9.5f, 9.5f),
@@ -82,7 +74,7 @@ public class CoinSpawner : MonoBehaviour
                     );
     }
 
-    private static Vector3 GetEnemyRandomPosition()
+    private static Vector3 GetRandomEnemyPosition()
     {
         return new Vector3(
                     Random.Range(-5.5f, 5.5f),

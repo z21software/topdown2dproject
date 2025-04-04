@@ -7,6 +7,11 @@ public class CoinAnimation : MonoBehaviour
     private float _animationDuration = .5f;
     private float _timer = 0f;
 
+    private void Start()
+    {
+        transform.localScale = Vector3.zero;
+    }
+
     // Update is called once per frame
     void Update()
     {

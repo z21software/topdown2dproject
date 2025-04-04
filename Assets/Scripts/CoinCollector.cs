@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
@@ -5,37 +6,45 @@ using UnityEngine;
 
 public class CoinCollector : MonoBehaviour
 {
+    [Header("UI Settings")]
     [SerializeField] private TextMeshProUGUI _coinsCount;
-    [SerializeField] private TextMeshProUGUI _dialogeText;
+    //[SerializeField] private TextMeshProUGUI _dialogeText;
     [SerializeField] private GameObject _scorePopupPrefab;
+
+    [Header("Damage")]
+    [SerializeField] private int _enemyDamage = 1;
 
     private int _score = 0;
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.CompareTag("Coin"))
-        {
-            GameObject popup = Instantiate(_scorePopupPrefab, collision.transform.position, Quaternion.identity);
-            popup.GetComponent<ScorePopup>().Initialize();
-            _score++;
-            UpdateUI();
-            Destroy(collision.gameObject);
-        }
-            
+        if (!collision.CompareTag("Coin")) return;
+        CollectCoin(collision.transform.position);
+        Destroy(collision.gameObject);
     }
 
-    private void UpdateUI()
+    private void CollectCoin(Vector3 position)
     {
-        _coinsCount.text = $"Очки: {_score}";
-    }
-
-    public void DecreaseScore(int damage)
-    {
-        if(_score == 0)
-        {
-            Destroy(gameObject);
-        }
-        _score = Mathf.Max(_score-damage, 0);
+        _score++;
+        SpawnPopup(position);
         UpdateUI();
+    }
+
+    private void UpdateUI() => _coinsCount.text = $"Очки: {_score}";
+
+    public void TakeDamage()
+    {
+        if (_score == 0) Destroy(gameObject);
+
+        _score = Mathf.Max(_score - _enemyDamage, 0);
+        UpdateUI();
+    }
+
+    private void SpawnPopup(Vector3 position)
+    {
+        if (_scorePopupPrefab == null) return;
+
+        Instantiate(_scorePopupPrefab, position, Quaternion.identity)
+            .GetComponent<ScorePopup>();
     }
 }
 

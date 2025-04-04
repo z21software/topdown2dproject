@@ -4,16 +4,18 @@ using UnityEngine;
 
 public class ScorePopup : MonoBehaviour
 {
-    private float _duration = .5f;
-    private float _speed = 2f;
-    private Vector3 _direction = Vector3.up;
-    public void Initialize()
+    [Header("Settings")]
+    [SerializeField] private float _duration = 0.5f;
+    [SerializeField] private float _speed = 2f;
+    [SerializeField] private Vector3 _direction = Vector3.up; // Настраивайте в инспекторе!
+
+    private void Start()
     {
         Destroy(gameObject, _duration);
     }
 
     private void Update()
     {
-        transform.position += _direction * Time.deltaTime * _speed;
+        transform.position += _direction * _speed * Time.deltaTime;
     }
 }
