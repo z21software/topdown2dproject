@@ -7,7 +7,8 @@ public class BasicEnemy : MonoBehaviour
     [SerializeField] private float _movementSpeed = 2f;
     [SerializeField] private float _nodeReachThreshold = 0.1f;
     [SerializeField] private GameObject _damagePopupPrefab;
-    
+    [SerializeField] private int _pathLength = 3; // Количество узлов в маршруте
+
 
     private CoinCollector _coinCollector;
     private List<Transform> _pathNode = new List<Transform>();
@@ -21,9 +22,9 @@ public class BasicEnemy : MonoBehaviour
 
     private void InitializePath()
     {
-        _pathNode = NodeManager.Instance.GetRandomNodes(3);
+        _pathNode = NodeManager.Instance.GetRandomNodes(_pathLength);
 
-        if(_pathNode.Count > 0)
+        if (_pathNode.Count > 0)
         {
             transform.position = _pathNode[0].position;
             _currentNodeIndex = 0;
@@ -33,7 +34,7 @@ public class BasicEnemy : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (!collision.CompareTag("Player")) return;
-            
+
         _coinCollector?.TakeDamage();
         SpawnDamagePopup(collision.transform.position);
         Destroy(gameObject);
@@ -62,6 +63,34 @@ public class BasicEnemy : MonoBehaviour
         );
 
         if (Vector3.Distance(transform.position, targetNode.position) < _nodeReachThreshold)
-            _currentNodeIndex = (_currentNodeIndex + 1) % _pathNode.Count;
+        {
+            // Увеличиваем индекс текущего узла
+            _currentNodeIndex++;
+
+            // Если достигли последнего узла в маршруте, генерируем новый маршрут
+            if (_currentNodeIndex >= _pathNode.Count)
+            {
+                GenerateNewPath();
+            }
+        }
+    }
+
+    private void GenerateNewPath()
+    {
+        // Сохраняем последний узел текущего маршрута как начальную точку нового маршрута
+        Transform lastNode = _pathNode[_pathNode.Count - 1];
+
+        // Получаем новый случайный маршрут
+        _pathNode = NodeManager.Instance.GetRandomNodes(_pathLength);
+
+        // Если получили пустой маршрут, просто возвращаемся
+        if (_pathNode.Count == 0) return;
+
+        // Устанавливаем начальную позицию нового маршрута в текущее положение врага
+        // Первый узел меняем на текущее положение, чтобы обеспечить непрерывность движения
+        _pathNode[0] = lastNode;
+
+        // Сбрасываем индекс текущего узла
+        _currentNodeIndex = 0;
     }
 }
