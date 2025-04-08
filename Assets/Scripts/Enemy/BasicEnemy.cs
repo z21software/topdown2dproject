@@ -9,14 +9,19 @@ public class BasicEnemy : MonoBehaviour
     [SerializeField] private GameObject _damagePopupPrefab;
     [SerializeField] private int _pathLength = 3; // Количество узлов в маршруте
 
+    [Header("Damage")]
+    [SerializeField] private int _enemyDamage = 1;
+
 
     private CoinCollector _coinCollector;
+    private PlayerBlinking _playerBlinking;
     private List<Transform> _pathNode = new List<Transform>();
     private int _currentNodeIndex;
 
     private void Awake()
     {
         _coinCollector = FindObjectOfType<CoinCollector>();
+        _playerBlinking = FindObjectOfType<PlayerBlinking>();
         InitializePath();
     }
 
@@ -35,7 +40,9 @@ public class BasicEnemy : MonoBehaviour
     {
         if (!collision.CompareTag("Player")) return;
 
-        _coinCollector?.TakeDamage();
+        _playerBlinking?.StartBlinking();
+        ShakeScreen.Instance?.Shake();
+        _coinCollector?.TakeDamage(_enemyDamage);
         SpawnDamagePopup(collision.transform.position);
         Destroy(gameObject);
     }
@@ -44,7 +51,7 @@ public class BasicEnemy : MonoBehaviour
     {
         if (_damagePopupPrefab == null) return;
         Instantiate(_damagePopupPrefab, position, Quaternion.identity)
-            .GetComponents<ScorePopup>();
+            .GetComponent<ScorePopup>();
     }
 
     private void Update()

@@ -8,11 +8,9 @@ public class CoinCollector : MonoBehaviour
 {
     [Header("UI Settings")]
     [SerializeField] private TextMeshProUGUI _coinsCount;
+    [SerializeField] private GameObject _coinEffectPrefab;
     //[SerializeField] private TextMeshProUGUI _dialogeText;
     [SerializeField] private GameObject _scorePopupPrefab;
-
-    [Header("Damage")]
-    [SerializeField] private int _enemyDamage = 1;
 
     private int _score = 0;
     private void OnTriggerEnter2D(Collider2D collision)
@@ -25,17 +23,28 @@ public class CoinCollector : MonoBehaviour
     private void CollectCoin(Vector3 position)
     {
         _score++;
+        CoinEffect(position);
         SpawnPopup(position);
         UpdateUI();
     }
 
+    private void CoinEffect(Vector3 position)
+    {
+        if (_coinEffectPrefab == null) return;
+        Instantiate(
+           _coinEffectPrefab,
+           position,
+           Quaternion.identity
+       );
+    }
+
     private void UpdateUI() => _coinsCount.text = $"Очки: {_score}";
 
-    public void TakeDamage()
+    public void TakeDamage(int damage)
     {
         if (_score == 0) Destroy(gameObject);
 
-        _score = Mathf.Max(_score - _enemyDamage, 0);
+        _score = Mathf.Max(_score - damage, 0);
         UpdateUI();
     }
 

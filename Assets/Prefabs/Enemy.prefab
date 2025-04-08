@@ -170,7 +170,7 @@ GameObject:
   - component: {fileID: -7125402011313519512}
   m_Layer: 0
   m_Name: Enemy
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -320,7 +320,9 @@ MonoBehaviour:
   _movementSpeed: 2
   _nodeReachThreshold: 0.1
   _damagePopupPrefab: {fileID: 9036434494540095107, guid: 20b0862de1adc494e8b627300b225ca4, type: 3}
-  _allNodes: []
+  _pathLength: 3
+  _enemyDamage: 1
+  _playerBlink: {fileID: 0}
 --- !u!1 &5347086058504383033
 GameObject:
   m_ObjectHideFlags: 0

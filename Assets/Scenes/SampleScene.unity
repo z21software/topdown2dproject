@@ -390,6 +390,7 @@ GameObject:
   - component: {fileID: 519420032}
   - component: {fileID: 519420031}
   - component: {fileID: 519420029}
+  - component: {fileID: 519420033}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -471,6 +472,20 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &519420033
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 519420028}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e5dd95003b90e1b448bdc357bbae62ab, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _shakePower: 0.05
+  _shakeDuration: 0.3
 --- !u!1 &532594055
 GameObject:
   m_ObjectHideFlags: 0
@@ -1296,6 +1311,7 @@ GameObject:
   - component: {fileID: 1635485758}
   - component: {fileID: 1635485757}
   - component: {fileID: 1635485759}
+  - component: {fileID: 1635485760}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -1426,7 +1442,7 @@ Transform:
   m_GameObject: {fileID: 1635485750}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -3.2188048, y: -0.6197842, z: 0}
+  m_LocalPosition: {x: -8.968805, y: 0.13021564, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1445,8 +1461,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _coinsCount: {fileID: 70027044}
+  _coinEffectPrefab: {fileID: 767592698708936522, guid: 67b16faec5126c249ac8ef2ee7b94491, type: 3}
   _scorePopupPrefab: {fileID: 9036434494540095107, guid: fb3c0c3ff7532cd41b8e77a8f2385eda, type: 3}
-  _enemyDamage: 1
 --- !u!114 &1635485757
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1567,6 +1583,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _speed: 5
+--- !u!114 &1635485760
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1635485750}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5102361766c06484c8426a32c3f1fa36, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _spriteRenderer: {fileID: 1635485754}
 --- !u!1 &1669174757
 GameObject:
   m_ObjectHideFlags: 0
@@ -1659,13 +1688,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e61e8f4d41e9b3f45922c572c67d7431, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _coinsPrefab:
+  _coinsPrefabs:
   - {fileID: 1362045695893385511, guid: eee366c311f6cb4449f2dc427dc5e4b4, type: 3}
   - {fileID: 7077966072869558470, guid: 66c569eeda8692347b69a86ec68faa55, type: 3}
   - {fileID: 3551674125455731038, guid: 4b198511b066d4f4681c83dea022f3f2, type: 3}
   _enemyPrefab: {fileID: 4492955458525808732, guid: 0f94600b04721e94d9abcae081f2d744, type: 3}
   _spawnInterwal: 2
-  _maxSpawns: 5
+  _maxSpawn: 10
   _gameDuration: 30
   _timerText: {fileID: 2093552912}
 --- !u!4 &1732004843
