@@ -9,6 +9,7 @@ public class PlayerInput : MonoBehaviour
     [SerializeField] private PlayerMovement _playerMovement;
     private PlayerControls _player—ontrols;
     private Vector2 _moveDirection;
+
     // Update is called once per frame
     private void Awake()
     {
@@ -26,6 +27,5 @@ public class PlayerInput : MonoBehaviour
     {
         _moveDirection = context.ReadValue<Vector2>();
         _playerMovement?.SetMoveDirection(_moveDirection);
-
     }
 }

@@ -12,9 +12,10 @@ GameObject:
   - component: {fileID: 6094990155989032253}
   - component: {fileID: 7302931255280195456}
   - component: {fileID: 4713066379059002824}
+  - component: {fileID: -4390137534732183967}
   m_Layer: 0
   m_Name: Coin
-  m_TagString: Coin
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -143,3 +144,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e4f3e6e2f377c9849b8eff5ca1559905, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &-4390137534732183967
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7077966072869558470}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b5bf2007d56ddd44dabb3e0d86a2aa71, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _hungerRestoreValue: 10
+  _consumeEffectPrefab: {fileID: 767592698708936522, guid: 67b16faec5126c249ac8ef2ee7b94491, type: 3}
+  _scorePopupPrefab: {fileID: 9036434494540095107, guid: fb3c0c3ff7532cd41b8e77a8f2385eda, type: 3}

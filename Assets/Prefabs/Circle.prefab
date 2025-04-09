@@ -12,9 +12,10 @@ GameObject:
   - component: {fileID: 3383948100027167790}
   - component: {fileID: 4948782295694016584}
   - component: {fileID: -8413757089241141541}
+  - component: {fileID: 2049663712152564863}
   m_Layer: 0
   m_Name: Circle
-  m_TagString: Coin
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -133,3 +134,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e4f3e6e2f377c9849b8eff5ca1559905, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &2049663712152564863
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1362045695893385511}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b5bf2007d56ddd44dabb3e0d86a2aa71, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _hungerRestoreValue: 10
+  _consumeEffectPrefab: {fileID: 767592698708936522, guid: 67b16faec5126c249ac8ef2ee7b94491, type: 3}
+  _scorePopupPrefab: {fileID: 9036434494540095107, guid: fb3c0c3ff7532cd41b8e77a8f2385eda, type: 3}

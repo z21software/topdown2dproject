@@ -6,6 +6,7 @@ public class PlayerMovement : MonoBehaviour
 {
     [SerializeField] private float _speed = 5f;
     private Vector2 _moveDirection;
+
     // Update is called once per frame
     public void SetMoveDirection(Vector2 direction)
     {
