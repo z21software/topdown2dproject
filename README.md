@@ -27,4 +27,9 @@ Next day, I'ff refactor some parts of code, add effects to enemy and add UI (men
 Forgot to add day5 commit :D
 
 Day 6:
- 
+- Added player properties (Healthm, Hunger, Stamina). Hunger can decrease/incresase (decreases every frame & increases if player eats smthg).
+- Reworked effects logic. It's now depends on new script
+- Added interface IEatable
+- Reworked UI (for debugging)
+- Added script EatableItem (for future items)
+Next day, I'll add debug for enemy (OnDrawGizmos()), add Increase/Decrease for stamina, add Inventory and some effects 
