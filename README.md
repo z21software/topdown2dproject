@@ -32,4 +32,11 @@ Day 6:
 - Added interface IEatable
 - Reworked UI (for debugging)
 - Added script EatableItem (for future items)
-Next day, I'll add debug for enemy (OnDrawGizmos()), add Increase/Decrease for stamina, add Inventory and some effects 
+Next day, I'll add debug for enemy (OnDrawGizmos()), add Increase/Decrease for stamina, add Inventory and some effects
+
+Day 7:
+- Refactor code. It's now more component oriented. 1 component for 1 task
+- Fixed bugs with health & hunger parametres
+- Added new UI for inventory (but it is not working correct)
+- Added inventory
+Next day, I'll work more with UI and effects. Maybe rework inventory logic (grid inventory idk)
