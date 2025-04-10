@@ -5,7 +5,7 @@ using UnityEngine;
 public class EatableItem : MonoBehaviour, IEatable
 {
     [Header("Settigns")]
-    [SerializeField] private float _hungerRestoreValue = 10f;
+    [SerializeField] private float _hungerRestoreValue = 2f;
     [SerializeField] private GameObject _consumeEffectPrefab;
     [SerializeField] private GameObject _scorePopupPrefab;
 

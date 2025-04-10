@@ -8,6 +8,7 @@ public class CoinSpawner : MonoBehaviour
     [SerializeField] private GameObject _enemyPrefab;
     [SerializeField] private float _spawnInterwal = 2.5f;
     [SerializeField] private int _maxSpawn = 5;
+    [SerializeField] private bool spawnEnemies = false;
     [SerializeField] private float _gameDuration = 30;
 
     [Header("UI")]
@@ -42,6 +43,8 @@ public class CoinSpawner : MonoBehaviour
     private void SpawnRandomObjects()
     {
         bool shouldSpawnCoin = Random.value < .7f;
+        if (spawnEnemies == true) 
+            shouldSpawnCoin = false;
         Vector3 position = shouldSpawnCoin 
             ? GetRandomCoinPosition() 
             : GetRandomEnemyPosition();

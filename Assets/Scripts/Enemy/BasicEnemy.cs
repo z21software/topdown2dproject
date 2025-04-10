@@ -99,4 +99,31 @@ public class BasicEnemy : MonoBehaviour
         // —брасываем индекс текущего узла
         _currentNodeIndex = 0;
     }
+
+    private void OnDrawGizmos()
+    {
+        if (_pathNode == null || _pathNode.Count == 0)
+            return;
+
+
+        Gizmos.color = Color.red;
+        for (int i = 0; i < _pathNode.Count - 1; i++)
+        {
+            Vector3 currentNode = _pathNode[i].position;
+            Vector3 nextNode = _pathNode[i + 1].position;
+            Gizmos.DrawLine(currentNode, nextNode);
+            Gizmos.DrawSphere(currentNode, .2f);
+        }
+
+        if (_pathNode.Count > 0 && _pathNode[_pathNode.Count - 1] != null)
+        {
+            Gizmos.DrawSphere(_pathNode[_pathNode.Count - 1].position, .2f);
+        }
+
+        if(_currentNodeIndex < _pathNode.Count && _pathNode[_currentNodeIndex] != null)
+        {
+            Gizmos.color = Color.green;
+            Gizmos.DrawSphere(_pathNode[_currentNodeIndex].position, .3f);
+        }
+    }
 }

@@ -146,6 +146,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b5bf2007d56ddd44dabb3e0d86a2aa71, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _hungerRestoreValue: 10
+  _hungerRestoreValue: 2
   _consumeEffectPrefab: {fileID: 767592698708936522, guid: 67b16faec5126c249ac8ef2ee7b94491, type: 3}
   _scorePopupPrefab: {fileID: 9036434494540095107, guid: fb3c0c3ff7532cd41b8e77a8f2385eda, type: 3}
