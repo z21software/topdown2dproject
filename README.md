@@ -46,3 +46,8 @@ I experimented with the inventory. I couldn't make something that I liked, so I 
 
 Day 9:
 Tried again to work with inventory, but I still dont't like the result. 
+- Refactor player properties (health, hunger, thirsty), add new base class
+- Add new property "thirsty"
+- Added "drinkable item" script & interface IDrinkable
+Next day I want to create lake to refill thirsty parameter. I want to deepen the survival mechanics and after that develope weapons
+
