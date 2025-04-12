@@ -5,5 +5,7 @@ using UnityEngine;
 public interface IDrinkable
 {
     float GetDrinkValue();
-    void Drin();
+    void Drink();
+    float GetQuality();
+    //bool isConsumable();
 }

@@ -2,17 +2,15 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class DrinkableItem : MonoBehaviour
+/*public abstract class DrinkableItem : MonoBehaviour, IDrinkable
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    [Header("Water settings")]
+    [SerializeField] protected float thirstRestore = 100f;
+    [SerializeField] protected ThristStat targetThristState;
+    [SerializeField] protected float quality = .5f;
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+    public abstract float GetDrinkValue();
+    public abstract void Drink();
+    public abstract float GetQuality();
 }
+*/

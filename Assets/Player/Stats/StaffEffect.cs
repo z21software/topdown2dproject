@@ -8,7 +8,7 @@ public class StaffEffect : MonoBehaviour
     [Header("Settings")]
     [SerializeField] private BaseStat _targetStat;
     [SerializeField] private HealthStat _healthStat;
-    [SerializeField] private float _targetPositiveEffect = 100f;
+    [SerializeField] private float _healThreshold = 100f;
     [SerializeField] float _effectInterval = 5f;
     [SerializeField] float _healthDamageAmount = 1f;
     [SerializeField] float _healAmount = 1f;
@@ -55,7 +55,7 @@ public class StaffEffect : MonoBehaviour
             _activeDamageRoutine = null;
         }
 
-        if (newValue < _targetPositiveEffect && _activeHealRoutine != null)
+        if (newValue < _healThreshold && _activeHealRoutine != null)
         {
             StopCoroutine(_activeHealRoutine);
             _activeHealRoutine = null;
