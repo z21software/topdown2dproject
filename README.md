@@ -40,3 +40,9 @@ Day 7:
 - Added new UI for inventory (but it is not working correct)
 - Added inventory
 Next day, I'll work more with UI and effects. Maybe rework inventory logic (grid inventory idk)
+
+Day 8:
+I experimented with the inventory. I couldn't make something that I liked, so I decided to abandon the inventory for now and focus on other mechanics.
+
+Day 9:
+Tried again to work with inventory, but I still dont't like the result. 
