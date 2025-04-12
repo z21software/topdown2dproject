@@ -51,3 +51,13 @@ Tried again to work with inventory, but I still dont't like the result.
 - Added "drinkable item" script & interface IDrinkable
 Next day I want to create lake to refill thirsty parameter. I want to deepen the survival mechanics and after that develope weapons
 
+Day 10:
+Night code before going to sleep:
+- Rework IDrinkable
+- Add lake
+- Add Player interaction with lake to drink water
+Water can have different qualities and may even harm the player. This mechanic makes drinkable items or water sources more unique. For example:
+- Water from a lake is unsafe but can fully replenish thirst from 0 to 100.
+- Water from a well is safe and can replenish thirst from 0 to 50. However, if the player drinks enough to reach 100 thirst using well water, it grants a stamina bonus.
+This mechanic will be implemented after I get some sleep. 😊
+
