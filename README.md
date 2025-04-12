@@ -60,4 +60,5 @@ Water can have different qualities and may even harm the player. This mechanic m
 - Water from a lake is unsafe but can fully replenish thirst from 0 to 100.
 - Water from a well is safe and can replenish thirst from 0 to 50. However, if the player drinks enough to reach 100 thirst using well water, it grants a stamina bonus.
 This mechanic will be implemented after I get some sleep. 😊
+I’ll also add radiation and radioactive zones, as well as mechanics for cold and overheating.
 
