@@ -12,14 +12,12 @@ public class BasicEnemy : MonoBehaviour
     [SerializeField] private int _enemyDamage = 1;
     [SerializeField] private GameObject _damagePopupPrefab;
 
-    private PlayerProperties _playerProperties;
     private PlayerBlinking _playerBlinking;
     private List<Transform> _pathNode = new List<Transform>();
     private int _currentNodeIndex;
 
     private void Awake()
     {
-        _playerProperties = FindObjectOfType<PlayerProperties>();
         _playerBlinking = FindObjectOfType<PlayerBlinking>();
         InitializePath();
     }
@@ -39,7 +37,9 @@ public class BasicEnemy : MonoBehaviour
     {
         if (!collision.CompareTag("Player")) return;
 
-        _playerProperties?.DecreaseHealth(_enemyDamage);
+        HealthStat playerHealth = collision.GetComponent<HealthStat>();
+        playerHealth?.Decrease(_enemyDamage);
+
         _playerBlinking?.StartBlinking();
         ShakeScreen.Instance?.Shake();
         SpawnDamagePopup(collision.transform.position);

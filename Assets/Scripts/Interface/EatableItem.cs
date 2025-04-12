@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class EatableItem : MonoBehaviour, IEatable
+public class EatableItem : MonoBehaviour
 {
     [Header("Settigns")]
     [SerializeField] private float _hungerRestoreValue = 2f;
@@ -37,12 +37,9 @@ public class EatableItem : MonoBehaviour, IEatable
     {
         if(collision.CompareTag("Player"))
         {
-            PlayerProperties playerProperties = collision.GetComponent<PlayerProperties>();
-            if(playerProperties != null)
-            {
-                playerProperties.IncreaseHunger(GetHungerValue());
-                Consume();
-            }
+            HungerStat playerHunger = collision.GetComponent<HungerStat>();
+            playerHunger?.Increase(_hungerRestoreValue);
+            Consume();
         }
     }
 

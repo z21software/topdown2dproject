@@ -20,7 +20,17 @@ public class PlayerProperties : MonoBehaviour
     private float _currentStamina;
     private float _timerHunger = 0;
     
-    
+    private void Start()
+    {
+        _healthStat.OnDeath += HandleDeath;
+    }
+
+    private void HandleDeath()
+    {
+        Destroy(gameObject);
+        Debug.Log("Игрок умер!");
+    }
+
     public float Stamina
     {
         get
@@ -32,14 +42,6 @@ public class PlayerProperties : MonoBehaviour
             _currentStamina = value;
         }
     }
-
-    void Start()
-    {
-        _currentStamina = _maxStamina;
-    }
-
-    public void DecreaseHealth(int damage) => _healthStat.Decrease(damage);
-    public void IncreaseHealth(float value) => _healthStat.Increase(value);
 
     public void DecreaseHunger(float value) => _hungerStat.Decrease(value);
     public void IncreaseHunger(float value) => _hungerStat.Increase(value);
