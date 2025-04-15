@@ -8,15 +8,19 @@ public abstract class BaseStat : MonoBehaviour, IStat
     public event Action<float> OnValueChanged;
     public event Action OnValueMin;
     public event Action OnValueMax;
+    //public event Action OnValueThreshold;
 
     [Header("Base settings")]
     [SerializeField] protected float _maxValue;
     [SerializeField] protected float _minValue;
     [SerializeField] protected float _currentValue;
+    //[SerializeField] protected float _thresholdValue;
 
     public float MaxValue => _maxValue;
     public float MinValue => _minValue;
     public float CurrentValue => _currentValue;
+
+    //public float ThresholdValue => _thresholdValue;
 
     public virtual void Increase(float value)
     {
@@ -38,6 +42,7 @@ public abstract class BaseStat : MonoBehaviour, IStat
 
         if (_currentValue <= _minValue) OnValueMin?.Invoke();
         if (_currentValue >= _maxValue) OnValueMax?.Invoke();
+        //if (_currentValue >= _thresholdValue) OnValueThreshold?.Invoke();
     }
 
     protected virtual void Start()

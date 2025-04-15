@@ -12,9 +12,16 @@ public class StaffEffect : MonoBehaviour
     [SerializeField] float _effectInterval = 5f;
     [SerializeField] float _healthDamageAmount = 1f;
     [SerializeField] float _healAmount = 1f;
+    
+    //[Header("Radiation")]
+    //[SerializeField] private RadiationStat _radiationStat;
+    //[SerializeField] private float _radiationThreshold = 20f;
+    //[SerializeField] private float _readiationMultiplyer = 1.25f;
+    //[SerializeField] bool _isRadioactive = false;
 
     private Coroutine _activeDamageRoutine;
     private Coroutine _activeHealRoutine;
+    //private Coroutine _activeRadiationDamage;
 
     void Start()
     {
@@ -28,7 +35,38 @@ public class StaffEffect : MonoBehaviour
         _targetStat.OnValueChanged += HandleValueChange;
         _targetStat.OnValueMin += StartNegativeEffect;
         _targetStat.OnValueMax += StartPositiveEffect;
+        //_radiationStat.OnValueThreshold += StartRadiationEffect;
     }
+
+    private void HandleValueChange(float newValue)
+    {
+        // Останавливаем эффекты при выходе из крайних состояний
+        if (newValue > 0 && _activeDamageRoutine != null)
+        {
+            StopCoroutine(_activeDamageRoutine);
+            _activeDamageRoutine = null;
+        }
+
+        if (newValue < _healThreshold && _activeHealRoutine != null)
+        {
+            StopCoroutine(_activeHealRoutine);
+            _activeHealRoutine = null;
+        }
+
+        /*if(_radiationStat.CurrentValue < _radiationThreshold && _activeRadiationDamage != null)
+        {
+            StopCoroutine(_activeRadiationDamage);
+            _activeRadiationDamage = null;
+        }*/
+    }
+
+    /*private void StartRadiationEffect()
+    {
+        if(_activeRadiationDamage == null && _radiationStat.CurrentValue >= _radiationThreshold)
+        {
+            _activeRadiationDamage = StartCoroutine(ApplyRadiation());
+        }
+    }*/
 
     private void StartPositiveEffect()
     {
@@ -46,21 +84,16 @@ public class StaffEffect : MonoBehaviour
         }
     }
 
-    private void HandleValueChange(float newValue)
+    /*private IEnumerator ApplyRadiation()
     {
-        // Останавливаем эффекты при выходе из крайних состояний
-        if (newValue > 0 && _activeDamageRoutine != null)
+        while(true)
         {
-            StopCoroutine(_activeDamageRoutine);
-            _activeDamageRoutine = null;
+            _healthDamageAmount = _healthDamageAmount * _readiationMultiplyer;
+            _healthStat.Decrease(_healthDamageAmount);
+            Debug.Log($"Applying radiation damage: {_healthDamageAmount}");
+            yield return new WaitForSeconds(_effectInterval / _readiationMultiplyer);
         }
-
-        if (newValue < _healThreshold && _activeHealRoutine != null)
-        {
-            StopCoroutine(_activeHealRoutine);
-            _activeHealRoutine = null;
-        }
-    }
+    }*/
 
     private IEnumerator ApplyDamage()
     {
@@ -90,5 +123,6 @@ public class StaffEffect : MonoBehaviour
         _targetStat.OnValueMin -= StartNegativeEffect;
         _targetStat.OnValueMax -= StartPositiveEffect;
         _targetStat.OnValueChanged -= HandleValueChange;
+        //_radiationStat.OnValueThreshold -= StartRadiationEffect;
     }
 }

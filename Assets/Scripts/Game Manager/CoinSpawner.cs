@@ -11,9 +11,6 @@ public class CoinSpawner : MonoBehaviour
     [SerializeField] private bool spawnEnemies = false;
     [SerializeField] private float _gameDuration = 30;
 
-    [Header("UI")]
-    [SerializeField] private TextMeshProUGUI _timerText;
-
     private float _timer = 0;
     private int _remainingSpawns;
 
@@ -26,7 +23,6 @@ public class CoinSpawner : MonoBehaviour
     {
         if (_gameDuration <= 0) return;
         HandleSpawn();
-        UpdateGameTimer();
     }
 
     private void HandleSpawn()
@@ -74,13 +70,5 @@ public class CoinSpawner : MonoBehaviour
             Random.Range(-9.0f, 9.0f),
             Random.Range(-4.0f, 4.0f),
             0);
-    }
-
-    private void UpdateGameTimer()
-    {
-        _gameDuration -= Time.deltaTime;
-        _timerText.text = _gameDuration > 0
-            ? $"Осталось {Mathf.FloorToInt(_gameDuration)}"
-            : $"Время вышло =(";
     }
 }
