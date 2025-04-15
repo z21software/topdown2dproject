@@ -1,0 +1,27 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ab4e37cfe183cdd49ac18e395ac58221, type: 3}
+  m_Name: ak47
+  m_EditorClassIdentifier: 
+  itemName: AK-47
+  description: AK-47 7.62
+  id: 4
+  type: 0
+  slotType: 9
+  frequency: 10
+  slotSize: {x: 1, y: 0}
+  image: {fileID: 0}
+  backgroundColor: {r: 0, g: 0.50980395, b: 0.9607843, a: 0}
+  prefab: {fileID: 2377029979831542069, guid: f4aeddd62488ed24c9da78344bb5e6cd, type: 3}
+  weaponType: 0
+  magazine: {fileID: 11400000, guid: baaffc15de5fc044cb661f5eb888c157, type: 2}
+  effectiveRange: 400
