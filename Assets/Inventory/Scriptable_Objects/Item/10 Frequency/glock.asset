@@ -1,0 +1,29 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ab4e37cfe183cdd49ac18e395ac58221, type: 3}
+  m_Name: glock
+  m_EditorClassIdentifier: 
+  itemName: Glock-17
+  description: 'Glock-17 9.19
+
+'
+  id: 68359982-994e-4ef2-a9c3-3b3a4efb89b4
+  type: 0
+  slotType: 9
+  frequency: 10
+  slotSize: {x: 1, y: 2}
+  image: {fileID: 21300000, guid: 9c1e7ba4ba5105c4a9bf1f33ce86907c, type: 3}
+  backgroundColor: {r: 0, g: 0, b: 0, a: 0}
+  prefab: {fileID: 2377029979831542069, guid: 4e9c9298a38d7cb48903cc6c06a11c29, type: 3}
+  weaponType: 2
+  magazine: {fileID: 11400000, guid: 424687943bb35884baa6994c47951518, type: 2}
+  effectiveRange: 50
