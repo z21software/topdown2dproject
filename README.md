@@ -62,3 +62,10 @@ Water can have different qualities and may even harm the player. This mechanic m
 This mechanic will be implemented after I get some sleep. 😊
 I’ll also add radiation and radioactive zones, as well as mechanics for cold and overheating.
 
+Day 11:
+-Added inventory
+I changed my mind about making a full system of radiation, overheating and hypothermia. I decided to make an inventory system after all. A GRID system similar to Tarkov. Within 2 days the inventory will be fully functional.
+
+Day 12:
+I forgot to commit yesterday, so added today
+
