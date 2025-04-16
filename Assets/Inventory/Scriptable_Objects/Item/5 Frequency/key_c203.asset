@@ -1,0 +1,27 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 555abd6aebf2bc047855f0b7ee415753, type: 3}
+  m_Name: key_c203
+  m_EditorClassIdentifier: 
+  itemName: Key C-203
+  description: 'Key to facillity room C-203
+
+'
+  id: 42252f1a-e77f-4652-a46c-2043b2d74acd
+  type: 6
+  slotType: 0
+  frequency: 5
+  slotSize: {x: 1, y: 1}
+  image: {fileID: 21300000, guid: 07294eed1a8a80d45878e214270a8424, type: 3}
+  backgroundColor: {r: 0.72156864, g: 0, b: 1, a: 0.078431375}
+  prefab: {fileID: 6290205052761578276, guid: c49b1fd493934ce41ad85d82ba189d6f, type: 3}
+  isEventItem: 0

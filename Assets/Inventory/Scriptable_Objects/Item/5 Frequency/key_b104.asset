@@ -1,0 +1,25 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 555abd6aebf2bc047855f0b7ee415753, type: 3}
+  m_Name: key_b104
+  m_EditorClassIdentifier: 
+  itemName: Key B-104
+  description: Key to facillity room B-104
+  id: 5c7b1c7e-fa76-41b3-8442-c1a797f6189b
+  type: 6
+  slotType: 0
+  frequency: 5
+  slotSize: {x: 1, y: 1}
+  image: {fileID: 21300000, guid: fe9a5a43f3125a340a65fdc359a4a18b, type: 3}
+  backgroundColor: {r: 0.72156864, g: 0, b: 1, a: 0.078431375}
+  prefab: {fileID: 6290205052761578276, guid: 5c95cda295b60224182e70f6ec8e04ab, type: 3}
+  isEventItem: 0

@@ -9,6 +9,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 703974270843583440}
+  - component: {fileID: 7834521016780696587}
+  - component: {fileID: 2866540656395589927}
   m_Layer: 5
   m_Name: 'Item2x2 '
   m_TagString: Untagged
@@ -36,6 +38,38 @@ RectTransform:
   m_AnchoredPosition: {x: 1101, y: -84}
   m_SizeDelta: {x: 150, y: 150}
   m_Pivot: {x: 0, y: 1}
+--- !u!114 &7834521016780696587
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5270344461816502900}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: efe259043a389a4428e141e1e9abc7b6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemData:
+    item: {fileID: 0}
+    isRotated: 0
+    matrixPosition: {x: 0, y: 0}
+    slotPosition: {x: 0, y: 0, z: 0}
+    slotPanelType: 0
+    myLootContainer: {fileID: 0}
+    myLootContainerId: 0
+--- !u!114 &2866540656395589927
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5270344461816502900}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a29c30326528d7b43a175d47cef4dac8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &5723178893880553211
 GameObject:
   m_ObjectHideFlags: 0

@@ -1,0 +1,27 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 555abd6aebf2bc047855f0b7ee415753, type: 3}
+  m_Name: green_card
+  m_EditorClassIdentifier: 
+  itemName: Access Card - Green Area
+  description: 'Access card for high security facility
+
+'
+  id: 27eda454-c1bb-4fb7-be52-b040fb2c6807
+  type: 6
+  slotType: 0
+  frequency: 1
+  slotSize: {x: 1, y: 1}
+  image: {fileID: 21300000, guid: 18b728f1bdc6b8c48b45561728fe28b8, type: 3}
+  backgroundColor: {r: 0.67058825, g: 0, b: 0, a: 0.078431375}
+  prefab: {fileID: 6290205052761578276, guid: 96da76100e97f9f4c892ccac805a0e44, type: 3}
+  isEventItem: 0

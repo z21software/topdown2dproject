@@ -14,13 +14,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemName: Ammo
   description: Ammo 5.56
-  id: 1
+  id: 69d66d5d-3d0a-42c1-9c37-028e67028957
   type: 4
   slotType: 0
   frequency: 25
   slotSize: {x: 1, y: 1}
   image: {fileID: 21300000, guid: b70aee9d6c899da4bbba33983ef3e679, type: 3}
-  backgroundColor: {r: 0.23137255, g: 0.7176471, b: 0, a: 0}
-  prefab: {fileID: 5490398811026452447, guid: 003eb3c3a4a8bab4d85305a1a4803291, type: 3}
+  backgroundColor: {r: 0.23137255, g: 0.7176471, b: 0, a: 0.078431375}
+  prefab: {fileID: 6290205052761578276, guid: 173c0cfacb08e36419519df61e80c76c, type: 3}
   ammoType: 0
   damage: 45

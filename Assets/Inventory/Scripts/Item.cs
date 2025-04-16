@@ -9,7 +9,7 @@ namespace Inventory
         [Header("Main Item COmponents")]
         public string itemName;
         [Multiline] public string description;
-        public int id;
+        public string id = System.Guid.NewGuid().ToString();
         public ItemType type;
         public SlotType slotType;
         public Frequency frequency;
