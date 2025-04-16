@@ -16,8 +16,6 @@ public class UpdateUI : MonoBehaviour
     [SerializeField] private HungerStat _hungerStat;
     [SerializeField] private ThristStat _thirstStat;
 
-    private int _lastThirst;
-
     private void Start()
     {
         _healthStat.OnValueChanged += UpdateHealthUI;
