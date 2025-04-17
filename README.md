@@ -69,3 +69,9 @@ I changed my mind about making a full system of radiation, overheating and hypot
 Day 12:
 I forgot to commit yesterday, so added today
 
+Day 13:
+Trying to fix an error
+
+Day 14:
+Stuck with an issue. trying to fully rework system, because my solution didn't work
+
