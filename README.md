@@ -75,3 +75,12 @@ Trying to fix an error
 Day 14:
 Stuck with an issue. trying to fully rework system, because my solution didn't work
 
+Day 15:
+#ReworkInventory 1
+Reworked UI, now more correct placement of icons and items
+Next day: Re-write core inventory system & re-create abstract Item class
+
+Day 16:
+
+
+
