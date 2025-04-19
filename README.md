@@ -81,6 +81,6 @@ Reworked UI, now more correct placement of icons and items
 Next day: Re-write core inventory system & re-create abstract Item class
 
 Day 16:
-
+Re-created abstract Item class & Panel control script
 
 
