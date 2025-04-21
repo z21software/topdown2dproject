@@ -83,4 +83,5 @@ Next day: Re-write core inventory system & re-create abstract Item class
 Day 16:
 Re-created abstract Item class & Panel control script
 
-
+Day 17 & Day 18:
+I discovered errors in the UI controls and in the Item class. I’m currently working on fixing them. Over the past couple of days, updates have only been happening in the readme because the mistakes I made required completely rebuilding the project. While I’m dealing with these issues, updates will only be in the form of text entries in the development diary. (I don’t see the point in creating a new GitHub repository just for the inventory system, so I decided to stick with text updates for now.) I hope to fix all the errors soon so that the inventory system will function properly and I can release it to the public.
