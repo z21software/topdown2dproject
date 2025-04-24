@@ -88,3 +88,6 @@ I discovered errors in the UI controls and in the Item class. I’m currently wo
 
 Day 18: (day 19, 0:01 AM =))
 I FINALLY FIXED THE BUG!!! Honestly, I still don’t fully understand what the problem was. Maybe I misplaced a symbol or didn’t assign an object correctly (even though I checked every single line of code multiple times). But it doesn’t matter. The important thing is that the system is finally working now, which means it will be ready in the next few days, and I’ll upload the final result to GitHub!
+
+Day 19 & Day 20:
+I’ve finally finished the main part of the inventory system. All that’s left is to add a JSON-based save and load system, implement the ability to pick up items dropped from the inventory, fix a couple of minor issues, and it’ll be ready. I’ll upload the final result to GitHub in 2-3 days.
